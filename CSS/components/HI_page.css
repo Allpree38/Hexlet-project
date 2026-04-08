@@ -1,0 +1,27 @@
+header {
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+main h3{
+    display: flex;
+    justify-content: center;
+}
+
+main div{
+    display: flex;
+    justify-content: center;
+}
+
+main button {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(142, 241, 237);
+    cursor: pointer;
+}
+MAIN button:hover {
+    background-color: rgb(116, 201, 198);
+}
