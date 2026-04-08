@@ -1,18 +1,23 @@
 header {
-    padding-top: 60px;
+    padding-top: 30px;
     display: flex;
     justify-content: center;
 }
 
-main h3{
+.Hi_massage {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+main h3 {
     display: flex;
     justify-content: center;
 }
 
-main div{
+/* .Start_work{
     display: flex;
-    justify-content: center;
-}
+} */
 
 main button {
     width: 200px;
@@ -22,6 +27,63 @@ main button {
     background-color: rgb(142, 241, 237);
     cursor: pointer;
 }
-MAIN button:hover {
+main button:hover {
     background-color: rgb(116, 201, 198);
+}
+
+/* Настройки разделов ФИО: */
+
+.first_name {
+    grid-area: first_name;
+    border-radius: 10px;
+    max-width: 250px;
+    height: 35px;
+}
+
+.name {
+    grid-area: name;
+    border-radius: 10px;
+    max-width: 250px;
+    height: 35px;
+}
+
+.surname {
+    grid-area: surname;
+    border-radius: 10px;
+    max-width: 250px;
+    height: 35px;
+}
+
+.phone_number {
+    grid-area: phone_number;
+    border-radius: 10px;
+    max-width: 250px;
+    height: 35px;
+}
+
+.your_photo {
+    grid-area: your_photo;
+}
+
+.photo {
+    grid-area: photo;
+    max-width: 400px;
+    height: 150px;
+    border: 1px  solid black;
+}
+
+.Full_name {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    max-width: 1200px;
+    align-items: center;
+    
+    /* разметка сетки */
+    grid-template-areas: 
+    "first_name photo"
+    "name photo"
+    "surname photo"
+    "phone_number your_photo";
 }

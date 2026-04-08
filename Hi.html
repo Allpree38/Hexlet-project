@@ -11,8 +11,40 @@
         <h1>Создатель резюме</h1>
     </header>
     <main>
-        <h3>Если готовы нажмите кнопку "НАЧАТЬ"</H3>
-        <div><button id="Hi_btn">НАЧАТЬ</button></div>
+        <div class="Hi_massage">
+            <p>Путник, приветствую тебя в моём создателе резюме! 
+            Здесь ты сможешь быстро заполнить резюме, которое поможет тебе в дальнейшем найти
+            роботёнку в великом королевстве Аутсорса!</p>
+        </div>
+        <form class="Start_work">
+            <h2>Выберите ваше направление и заполните поля ниже</h2>
+            <select name="Specialisations" id="">
+                <option value="">IT-специалист</option>
+                <option value="">маркетолог</option>
+                <option value="">бухгалтер</option>
+                <option value="">инженер</option>
+                <option value="">менеджер</option>
+            </select>
+            <h3>Ваши личные данные (ФИО, контакты, фото)</h3>
+            <div class="Full_name">
+                <input class="first_name" placeholder="Ваше имя" type="text" required>
+                <input class="name" type="text" placeholder="Ваша фамилия" required>
+                <input class="surname" placeholder="Ваше отчество" type="text" required>
+                <input class="phone_number" placeholder="Ваш номер телефона" type="text" required>
+                <input class="your_photo" type="file" accept="image/*" onchange="previewYourPhoto()">
+                <img class="photo" id="previewImg" src="./assets/images/profile.png">
+            </div>
+            <h3>Ваш опыт работы (компания, должность, период, обязанности)</h3>
+            <input type="text" required>
+            <h3>Ваше образование (учебное заведение, специальность, годы обучения)</h3>
+            <input type="text" required>
+            <h3>Ваши навыки (профессиональные компетенции, уровень владения)</h3>
+            <textarea name="" id=""></textarea>
+            <h3>Дополнительная информация о вас (курсы, сертификаты, языки).</h3>
+            <textarea name="" id=""></textarea>
+        </form>
+        <h2>Если вы заполнили все поля нажмите кнопку "ПРОВЕРИТЬ"</h2>
+        <div><button id="Hi_btn">ПРОВЕРИТЬ</button></div>
     </main>
     <script src="./JS/HI.js"></script>
 </body>
