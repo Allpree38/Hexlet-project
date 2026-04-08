@@ -27,12 +27,32 @@
             </select>
             <h3>Ваши личные данные (ФИО, контакты, фото)</h3>
             <div class="Full_name">
-                <input class="first_name" placeholder="Ваше имя" type="text" required>
-                <input class="name" type="text" placeholder="Ваша фамилия" required>
-                <input class="surname" placeholder="Ваше отчество" type="text" required>
-                <input class="phone_number" placeholder="Ваш номер телефона" type="text" required>
+                <input class="first_name" 
+                placeholder="Ваше имя" 
+                type="text" pattern="[A-ZА-Я].*"
+                maxlength="15" 
+                title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
+                required>
+                <input class="name" 
+                placeholder="Ваша фамилия" 
+                type="text" pattern="[A-ZА-Я].*" 
+                maxlength="15" 
+                title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
+                required>
+                <input class="surname" 
+                placeholder="Ваше отчество" 
+                type="text" pattern="[A-ZА-Я].*" 
+                maxlength="15" 
+                title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
+                required>
+                <input class="phone_number" 
+                placeholder="Ваш номер телефона" 
+                type="tel" pattern="[0-9+\-\s]" 
+                title="Разрешены символы только: +,0-9" 
+                required>
                 <input class="your_photo" type="file" accept="image/*" onchange="previewYourPhoto()">
                 <img class="photo" id="previewImg" src="./assets/images/profile.png">
+                <button type="submit">asd</button>
             </div>
             <h3>Ваш опыт работы (компания, должность, период, обязанности)</h3>
             <input type="text" required>
