@@ -18,18 +18,19 @@
         </div>
         <form class="Start_work">
             <h2>Выберите ваше направление и заполните поля ниже</h2>
-            <select name="Specialisations" id="">
-                <option value="">IT-специалист</option>
-                <option value="">маркетолог</option>
-                <option value="">бухгалтер</option>
-                <option value="">инженер</option>
-                <option value="">менеджер</option>
+            <select name="Specialisations" id="Specialisations">
+                <option value="IT">IT-специалист</option>
+                <option value="marketing">Маркетолог</option>
+                <option value="accountant">Бухгалтер</option>
+                <option value="engineer">Инженер</option>
+                <option value="manager">Менеджер</option>
             </select>
             <h3>Ваши личные данные (ФИО, контакты, фото)</h3>
             <div class="Full_name">
 
                 <!-- Имя -->
                 <input class="first_name" 
+                id="first_name"
                 placeholder="Ваше имя" 
                 type="text" pattern="[A-ZА-Я].*"
                 maxlength="15" 
@@ -37,7 +38,8 @@
                 required>
 
                 <!-- Фамилия -->
-                <input class="name" 
+                <input class="surname" 
+                id="surname"
                 placeholder="Ваша фамилия" 
                 type="text" 
                 pattern="[A-ZА-Я].*" 
@@ -46,7 +48,8 @@
                 required>
 
                 <!-- Отчество -->
-                <input class="surname" 
+                <input class="patronymic" 
+                id="patronymic"
                 placeholder="Ваше отчество" 
                 type="text" 
                 pattern="[A-ZА-Я].*" 
@@ -55,43 +58,65 @@
                 required>
                 
                 <!-- Номер телофона -->
-                    <label>+7<input class="phone_number" 
-                    placeholder="Ваш номер телефона" 
-                    type="tel"  
-                    title="Разрешены символы только: +,0-9" 
-                    required
-                    oninput="this.value = this.value.replace(/\D/g, '')"></label>
-                <input class="your_photo" type="file" accept="image/*" onchange="previewYourPhoto()">
-                <img class="photo" id="previewImg" src="./assets/images/profile.png">
+                    <label>+7<input class="phone_number"
+                        id="phone_number" 
+                        placeholder="Ваш номер телефона" 
+                        type="tel"  
+                        title="Разрешены символы только: +,0-9" 
+                        required
+                        oninput="this.value = this.value.replace(/\D/g, '')"></label>
+
+                <!-- Фотография -->
+                <input class="your_photo"
+                id="your_photo" 
+                type="file" 
+                accept="image/*" 
+                onchange="previewYourPhoto()">
+
+                <!-- Готовое фото -->
+                <img class="photo" 
+                id="photo" 
+                src="./assets/images/profile.png">
+
                 <button type="submit">Проверить</button>
             </div>
             <h3>Ваш опыт работы (компания, должность, период, обязанности)</h3>
             <div class="workExp">
                 <div>
                     <legend>Компания(ии) в которой вы раньше работали</legend>
-                    <input type="text" required>
+                    <input type="text" 
+                    id="company"
+                    required>
                 </div>
                 <div>    
                     <legend>Должность</legend>
-                    <input type="text" required>
+                    <input type="text" 
+                    id="position"
+                    required>
                 </div>
                 <div>
                     <legend>Период работы</legend>
-                    <input type="text" required>
+                    <input type="text" 
+                    id="workTime"
+                    required>
                 </div>
                 <div>
                     <legend>Какие вы выполняли обязаности?</legend>
-                    <textarea name="" id=""></textarea>
+                    <textarea 
+                    id="duties" 
+                    required></textarea>
                 </div>
             </div>
             <h3>Ваше образование (учебное заведение, специальность, годы обучения)</h3>
             <div>
-                <input type="text" required>
+                <input type="text" 
+                id="education"
+                required>
             </div>
             <h3>Ваши навыки (профессиональные компетенции, уровень владения)</h3>
-            <textarea name="" id=""></textarea>
+            <textarea id="skills"></textarea>
             <h3>Дополнительная информация о вас (курсы, сертификаты, языки).</h3>
-            <textarea name="" id=""></textarea>
+            <textarea id="info"></textarea>
         </form>
         <h2>Если вы заполнили все поля нажмите кнопку "ПРОВЕРИТЬ"</h2>
         <div><button id="Hi_btn">ПРОВЕРИТЬ</button></div>

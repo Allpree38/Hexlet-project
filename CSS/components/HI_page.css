@@ -15,10 +15,6 @@ main h3 {
     justify-content: center;
 }
 
-/* .Start_work{
-    display: flex;
-} */
-
 main button {
     width: 200px;
     height: 50px;
@@ -40,14 +36,14 @@ main button:hover {
     height: 35px;
 }
 
-.name {
+.surname {
     grid-area: name;
     border-radius: 10px;
     max-width: 250px;
     height: 35px;
 }
 
-.surname {
+.patronymic{
     grid-area: surname;
     border-radius: 10px;
     max-width: 250px;
@@ -67,7 +63,7 @@ main button:hover {
 
 .photo {
     grid-area: photo;
-    max-width: 400px;
+    max-width: 300px;
     height: 150px;
     border: 1px  solid black;
 }
