@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Кнопка очистки даных из Local
+// Кнопка очистки даных из LocalStorage
 document.getElementById('clear_btn').onclick = () => {
     document.querySelectorAll('input, textarea, select').forEach(field => field.value = '');
     document.getElementById('photo').src = './assets/images/profile.png';

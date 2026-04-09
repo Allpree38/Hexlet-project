@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/CSS/components/CV.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <header>
         <h1>Сгенерированное резюме</h1>
         <button id="back_btn">НАЗАД</button>
+        <button id="downloadPDF">Скачать PDF</button>
     </header>
     <main id="CV-main">
         <p>Загрузка...</p>
     </main>
     <script src="./JS/CV.js"></script>
+    <script src="/JS/PDF.js"></script>
 </body>
 </html>
