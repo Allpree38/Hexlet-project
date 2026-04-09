@@ -40,3 +40,37 @@ document.getElementById('Hi_btn').onclick = (e) => {
     // Переход на страницу-шаблон
     window.location.href = 'CV.html';
 };
+
+// Бэкап данных из LocalStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const savedData = localStorage.getItem('CVData');
+    if (!savedData) return;
+
+    const data = JSON.parse(savedData);
+
+    if (data.specialisation) document.getElementById('Specialisations').value = data.specialisation;
+    if (data.firstName) document.getElementById('first_name').value = data.firstName;
+    if (data.lastName) document.getElementById('surname').value = data.lastName;
+    if (data.patronymic) document.getElementById('patronymic').value = data.patronymic;
+    if (data.phone) document.getElementById('phone_number').value = data.phone;
+    if (data.company) document.getElementById('company').value = data.company;
+    if (data.position) document.getElementById('position').value = data.position;
+    if (data.workPeriod) document.getElementById('workTime').value = data.workPeriod;
+    if (data.duties) document.getElementById('duties').value = data.duties;
+    if (data.education) document.getElementById('education').value = data.education;
+    if (data.skills) document.getElementById('skills').value = data.skills;
+    if (data.infoAbout) document.getElementById('info').value = data.infoAbout;
+
+    if (data.photoSrc && data.photoSrc !== './assets/images/profile.png') {
+        const photoImg = document.getElementById('photo');
+        photoImg.src = data.photoSrc;
+        photoImg.style.display = 'block';
+    }
+});
+
+// Кнопка очистки даных из Local
+document.getElementById('clear_btn').onclick = () => {
+    document.querySelectorAll('input, textarea, select').forEach(field => field.value = '');
+    document.getElementById('photo').src = './assets/images/profile.png';
+    localStorage.removeItem('CVData');
+};
