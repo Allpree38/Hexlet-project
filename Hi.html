@@ -27,37 +27,67 @@
             </select>
             <h3>Ваши личные данные (ФИО, контакты, фото)</h3>
             <div class="Full_name">
+
+                <!-- Имя -->
                 <input class="first_name" 
                 placeholder="Ваше имя" 
                 type="text" pattern="[A-ZА-Я].*"
                 maxlength="15" 
                 title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
                 required>
+
+                <!-- Фамилия -->
                 <input class="name" 
                 placeholder="Ваша фамилия" 
-                type="text" pattern="[A-ZА-Я].*" 
+                type="text" 
+                pattern="[A-ZА-Я].*" 
                 maxlength="15" 
                 title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
                 required>
+
+                <!-- Отчество -->
                 <input class="surname" 
                 placeholder="Ваше отчество" 
-                type="text" pattern="[A-ZА-Я].*" 
+                type="text" 
+                pattern="[A-ZА-Я].*" 
                 maxlength="15" 
                 title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
                 required>
-                <input class="phone_number" 
-                placeholder="Ваш номер телефона" 
-                type="tel" pattern="[0-9+\-\s]" 
-                title="Разрешены символы только: +,0-9" 
-                required>
+                
+                <!-- Номер телофона -->
+                    <label>+7<input class="phone_number" 
+                    placeholder="Ваш номер телефона" 
+                    type="tel"  
+                    title="Разрешены символы только: +,0-9" 
+                    required
+                    oninput="this.value = this.value.replace(/\D/g, '')"></label>
                 <input class="your_photo" type="file" accept="image/*" onchange="previewYourPhoto()">
                 <img class="photo" id="previewImg" src="./assets/images/profile.png">
-                <button type="submit">asd</button>
+                <button type="submit">Проверить</button>
             </div>
             <h3>Ваш опыт работы (компания, должность, период, обязанности)</h3>
-            <input type="text" required>
+            <div class="workExp">
+                <div>
+                    <legend>Компания(ии) в которой вы раньше работали</legend>
+                    <input type="text" required>
+                </div>
+                <div>    
+                    <legend>Должность</legend>
+                    <input type="text" required>
+                </div>
+                <div>
+                    <legend>Период работы</legend>
+                    <input type="text" required>
+                </div>
+                <div>
+                    <legend>Какие вы выполняли обязаности?</legend>
+                    <textarea name="" id=""></textarea>
+                </div>
+            </div>
             <h3>Ваше образование (учебное заведение, специальность, годы обучения)</h3>
-            <input type="text" required>
+            <div>
+                <input type="text" required>
+            </div>
             <h3>Ваши навыки (профессиональные компетенции, уровень владения)</h3>
             <textarea name="" id=""></textarea>
             <h3>Дополнительная информация о вас (курсы, сертификаты, языки).</h3>
