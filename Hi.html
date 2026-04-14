@@ -18,7 +18,7 @@
             роботёнку в великом королевстве Аутсорса!</p>
         </div>
         <form class="Start_work">
-            <div class="block">
+            <div class="block_choose">
                 <h2>Выберите ваше направление и заполните поля ниже</h2>
                 <select name="Specialisations" id="Specialisations">
                     <option value="IT">IT-специалист</option>
@@ -108,6 +108,7 @@
                         <input type="text" 
                         class="your_company"
                         id="company"
+                        maxlength="50"
                         placeholder="Служба доставки"
                         required>
                     </div>
@@ -118,6 +119,7 @@
                         <input type="text" 
                         class="your_position"
                         id="position"
+                        maxlength="50"
                         placeholder="Ваша должность"
                         required>
                     </div>
@@ -128,6 +130,7 @@
                         <input type="text" 
                         class="your_workTime"
                         id="workTime"
+                        maxlength="50"
                         placeholder="C 01.01.1990 по 01.01.2000"
                         required>
                     </div>
@@ -138,12 +141,13 @@
                         <textarea 
                         class="your_duties"
                         id="duties" 
+                        maxlength="500"
                         placeholder="Занимался созданием рабочих условий"
                         required></textarea>
                     </div>
                 </div>
             </div>
-            <h3>Ваше образование (учебное заведение, специальность, продолжительность обучения)</h3>*-
+            <h3>Ваше образование (учебное заведение, специальность, продолжительность обучения)</h3>
             <div class="block">
                 <div class="about_education">
 
@@ -152,6 +156,7 @@
                         <legend>Учебное заведение</legend>
                         <input type="text" 
                         id="education"
+                        maxlength="50"
                         class="education"
                         placeholder="Лицей"
                         required>
@@ -161,7 +166,8 @@
                     <div class="your_spec">
                         <legend>Специальность</legend>
                         <input type="text"
-                        id="specialisation"
+                        id="your_specialisation"
+                        maxlength="50"
                         class="specialisation"
                         placeholder="ИСиП"
                         required>
@@ -172,6 +178,7 @@
                         <legend>Продолжительность обучения</legend>
                         <input type="text" 
                         id="education_time"
+                        maxlength="50"
                         class="education_time"
                         placeholder="11 классов"
                         required>
@@ -179,12 +186,13 @@
                 </div>
             </div>
             <h3>Ваши навыки и дополнительная иформация (по желанию)</h3>
-            <div class="block">
+            <div class="block_about">
 
                 <!-- Навыки -->
                 <div>
                     <textarea 
                     id="skills"
+                    maxlength="500"
                     class="skills"
                     placeholder="Ваши навыки"
                     required></textarea>
@@ -194,20 +202,24 @@
                 <div>    
                     <textarea 
                     id="info"
+                    maxlength="500"
                     class="info"
                     placeholder="Дополнительная информация о вас"></textarea>
                 </div>
             </div>
-            <div class="block">
+            <h3>Если вы заполнили все поля нажмите кнопку "ПРОВЕРИТЬ"</h3>
+            <div class="block_btn">
                 <button type="submit">Проверить</button>
+                <button id="clear_btn" type="button">ОЧИСТИТЬ ВСЁ</button>
             </div>
         </form>
-        <h2>Если вы заполнили все поля нажмите кнопку "ПРОВЕРИТЬ"</h2>
-        <div class="block">
-            <button id="Hi_btn">Готово</button>
-            <button id="clear_btn" type="button">ОЧИСТИТЬ ВСЁ</button>
-        </div>
     </main>
+    <footer>
+        <div class="block_ready">
+            <h2>Пожалуйста убедитесь что всё введено верно!</h2>
+            <div><button id="Hi_btn">Готово</button></div>
+        </div>
+    </footer>
     <script src="./JS/HI.js"></script>
 </body>
 </html>

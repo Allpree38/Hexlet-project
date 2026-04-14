@@ -51,6 +51,8 @@ function generateCV(data) {
             <div class="CVJobInfo">
                 <h3>Образование</h3>
                 <p>${escapeHtml(data.education || 'Не указано')}</p>
+                <p>${escapeHtml(data.your_specialisation || 'Не указана')}</p>
+                <p>${escapeHtml(data.education_time || 'Не указано')}</p>
             </div>
             <div class="CVJobInfo">
                 <h3>Навыки</h3>

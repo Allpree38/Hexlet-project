@@ -18,7 +18,23 @@ main h3 {
     justify-content: center;
 }
 
-main button {
+.block_choose {
+    gap: 10px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block_choose select {
+    background-color: var(--input-bg);
+    max-width: 150px;
+    max-height: 30px;
+    border-radius: 10px;
+}
+
+/* Кнопка */
+button {
     width: 200px;
     height: 50px;
     border-radius: 10px;
@@ -26,12 +42,34 @@ main button {
     background-color: rgb(142, 241, 237);
     cursor: pointer;
 }
-main button:hover {
+button:hover {
     background-color: rgb(116, 201, 198);
+}
+
+.block_btn {
+    gap: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.block_ready {
+    gap: 10px;
+    margin-bottom: 50px;
+    justify-items: center;
+    align-items: center;
 }
 
 /* Настройки разделов ФИО: */
 .block {
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
 }
@@ -85,6 +123,10 @@ main button:hover {
     max-width: 300px;
     height: 150px;
     border: var(--input-border);
+}
+
+.Full_name img {
+    background-color: var(--input-bg);
 }
 
  /* GRID сетка */
@@ -157,6 +199,7 @@ main button:hover {
 }
 
 .workExp {
+    gap: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -170,12 +213,17 @@ main button:hover {
 }
 
 /* ==================================================================================================== */
+.about_education {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
 .education {
     border-radius: var(--input-border-radius);
     border: var(--input-border);
     background-color: var(--input-bg);
-    max-width: var(--input-max-width);
+    width: 220px;
     height: var(--input-height);
 }
 
@@ -183,7 +231,7 @@ main button:hover {
     border-radius: var(--input-border-radius);
     border: var(--input-border);
     background-color: var(--input-bg);
-    max-width: var(--input-max-width);
+    width: 220px;
     height: var(--input-height);
 }
 
@@ -191,11 +239,17 @@ main button:hover {
     border-radius: var(--input-border-radius);
     border: var(--input-border);
     background-color: var(--input-bg);
-    max-width: var(--input-max-width);
+    width: 220px;
     height: var(--input-height);
 }
 
 /* ==================================================================================================== */
+
+.block_about {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+}
 
 .skills {
     border: var(--input-border);
@@ -205,7 +259,6 @@ main button:hover {
     resize: none;
 }
 
-/* ==================================================================================================== */
 .info {
     border: var(--input-border);
     background-color: var(--input-bg);
