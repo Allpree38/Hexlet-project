@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="./CSS/components/HI_page.css">
+    <link rel="stylesheet" href="./CSS/Roots.css">
 </head>
 <body>
     <header>
@@ -12,115 +13,198 @@
     </header>
     <main>
         <div class="Hi_massage">
-            <p>Путник, приветствую тебя в моём создателе резюме! 
-            Здесь ты сможешь быстро заполнить резюме, которое поможет тебе в дальнейшем найти
+            <h2>Путник, приветствую тебя в моём создателе резюме! </h2>
+            <p>Здесь ты сможешь быстро заполнить резюме, которое поможет тебе в дальнейшем найти
             роботёнку в великом королевстве Аутсорса!</p>
         </div>
         <form class="Start_work">
-            <h2>Выберите ваше направление и заполните поля ниже</h2>
-            <select name="Specialisations" id="Specialisations">
-                <option value="IT">IT-специалист</option>
-                <option value="marketing">Маркетолог</option>
-                <option value="accountant">Бухгалтер</option>
-                <option value="engineer">Инженер</option>
-                <option value="manager">Менеджер</option>
-            </select>
+            <div class="block">
+                <h2>Выберите ваше направление и заполните поля ниже</h2>
+                <select name="Specialisations" id="Specialisations">
+                    <option value="IT">IT-специалист</option>
+                    <option value="marketing">Маркетолог</option>
+                    <option value="accountant">Бухгалтер</option>
+                    <option value="engineer">Инженер</option>
+                    <option value="manager">Менеджер</option>
+                </select>
+            </div>
             <h3>Ваши личные данные (ФИО, контакты, фото)</h3>
-            <div class="Full_name">
+            <div class="block">
+                <div class="Full_name">
 
-                <!-- Имя -->
-                <input class="first_name" 
-                id="first_name"
-                placeholder="Ваше имя" 
-                type="text" pattern="[A-ZА-Я].*"
-                maxlength="15" 
-                title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
-                required>
+                    <!-- Фамилия -->
+                    <div class="block_divs">
+                        <legend>Фамилия:</legend>
+                        <input class="surname" 
+                        id="surname"
+                        placeholder="Иванов" 
+                        type="text" 
+                        pattern="[A-ZА-Я].*" 
+                        maxlength="15" 
+                        title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
+                        required>
+                    </div>
+                    
+                    <!-- Имя -->
+                    <div class="block_divs">
+                        <legend>Имя:</legend>    
+                        <input class="first_name" 
+                        id="first_name"
+                        placeholder="Иван" 
+                        type="text" pattern="[A-ZА-Я].*"
+                        maxlength="15" 
+                        title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
+                        required>
+                    </div>
 
-                <!-- Фамилия -->
-                <input class="surname" 
-                id="surname"
-                placeholder="Ваша фамилия" 
-                type="text" 
-                pattern="[A-ZА-Я].*" 
-                maxlength="15" 
-                title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
-                required>
+                    <!-- Отчество -->
+                    <div class="block_divs">
+                        <legend>Отчество:</legend>
+                        <input class="patronymic" 
+                        id="patronymic"
+                        placeholder="Иванович" 
+                        type="text" 
+                        pattern="[A-ZА-Я].*" 
+                        maxlength="15" 
+                        title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
+                        required>
+                    </div>
 
-                <!-- Отчество -->
-                <input class="patronymic" 
-                id="patronymic"
-                placeholder="Ваше отчество" 
-                type="text" 
-                pattern="[A-ZА-Я].*" 
-                maxlength="15" 
-                title="ФИО начинается с ЗАГЛАВНОЙ буквы" 
-                required>
-                
-                <!-- Номер телофона -->
-                    <label>+7<input class="phone_number"
+                    <!-- Номер телофона -->
+                    <div class="block_divs">
+                        <legend>Номер вашего телефона:</legend>
+                        <label>+7<input class="phone_number"
                         id="phone_number" 
-                        placeholder="Ваш номер телефона" 
+                        placeholder=" 123-123-12-12" 
                         type="tel"  
                         title="Разрешены символы только: +,0-9" 
                         required
                         oninput="this.value = this.value.replace(/\D/g, '')"></label>
+                    </div>
 
-                <!-- Фотография -->
-                <input class="your_photo"
-                id="your_photo" 
-                type="file" 
-                accept="image/*" 
-                onchange="previewYourPhoto()">
+                    <!-- Фотография -->
+                    <div class="block_divs">
+                        <legend>Загрузите файл с фото:</legend>
+                        <input class="your_photo"
+                        id="your_photo" 
+                        type="file" 
+                        accept="image/*" 
+                        onchange="previewYourPhoto()">
+                    </div>
 
-                <!-- Готовое фото -->
-                <img class="photo" 
-                id="photo" 
-                src="./assets/images/profile.png">
-
-                <button type="submit">Проверить</button>
+                    <!-- Готовое фото -->
+                    <img class="photo" 
+                    id="photo" 
+                    src="./assets/images/profile.png">
+                </div>
             </div>
             <h3>Ваш опыт работы (компания, должность, период, обязанности)</h3>
-            <div class="workExp">
-                <div>
-                    <legend>Компания(ии) в которой вы раньше работали</legend>
-                    <input type="text" 
-                    id="company"
-                    required>
+            <div class="block">
+                <div class="workExp">
+
+                    <!-- Компании -->
+                    <div class="company">
+                        <legend>Компан(ия/ии):</legend>
+                        <input type="text" 
+                        class="your_company"
+                        id="company"
+                        placeholder="Служба доставки"
+                        required>
+                    </div>
+
+                    <!-- Должность -->
+                    <div class="position">    
+                        <legend>Должность:</legend>
+                        <input type="text" 
+                        class="your_position"
+                        id="position"
+                        placeholder="Ваша должность"
+                        required>
+                    </div>
+
+                    <!-- Период работы -->
+                    <div class="workTime">
+                        <legend>Период работы:</legend>
+                        <input type="text" 
+                        class="your_workTime"
+                        id="workTime"
+                        placeholder="C 01.01.1990 по 01.01.2000"
+                        required>
+                    </div>
+
+                    <!-- Обязаности -->
+                    <div class="duties">
+                        <legend>Какие вы выполняли обязаности?:</legend>
+                        <textarea 
+                        class="your_duties"
+                        id="duties" 
+                        placeholder="Занимался созданием рабочих условий"
+                        required></textarea>
+                    </div>
                 </div>
-                <div>    
-                    <legend>Должность</legend>
-                    <input type="text" 
-                    id="position"
-                    required>
+            </div>
+            <h3>Ваше образование (учебное заведение, специальность, продолжительность обучения)</h3>*-
+            <div class="block">
+                <div class="about_education">
+
+                    <!-- Учебное заведение -->
+                    <div class="your_education">
+                        <legend>Учебное заведение</legend>
+                        <input type="text" 
+                        id="education"
+                        class="education"
+                        placeholder="Лицей"
+                        required>
+                    </div>
+
+                    <!-- Специальность -->
+                    <div class="your_spec">
+                        <legend>Специальность</legend>
+                        <input type="text"
+                        id="specialisation"
+                        class="specialisation"
+                        placeholder="ИСиП"
+                        required>
+                    </div>
+
+                    <!-- Время обучения -->
+                    <div>
+                        <legend>Продолжительность обучения</legend>
+                        <input type="text" 
+                        id="education_time"
+                        class="education_time"
+                        placeholder="11 классов"
+                        required>
+                    </div>
                 </div>
+            </div>
+            <h3>Ваши навыки и дополнительная иформация (по желанию)</h3>
+            <div class="block">
+
+                <!-- Навыки -->
                 <div>
-                    <legend>Период работы</legend>
-                    <input type="text" 
-                    id="workTime"
-                    required>
-                </div>
-                <div>
-                    <legend>Какие вы выполняли обязаности?</legend>
                     <textarea 
-                    id="duties" 
+                    id="skills"
+                    class="skills"
+                    placeholder="Ваши навыки"
                     required></textarea>
                 </div>
+
+                <!-- Дополнительная информация -->
+                <div>    
+                    <textarea 
+                    id="info"
+                    class="info"
+                    placeholder="Дополнительная информация о вас"></textarea>
+                </div>
             </div>
-            <h3>Ваше образование (учебное заведение, специальность, годы обучения)</h3>
-            <div>
-                <input type="text" 
-                id="education"
-                required>
+            <div class="block">
+                <button type="submit">Проверить</button>
             </div>
-            <h3>Ваши навыки (профессиональные компетенции, уровень владения)</h3>
-            <textarea id="skills"></textarea>
-            <h3>Дополнительная информация о вас (курсы, сертификаты, языки).</h3>
-            <textarea id="info"></textarea>
         </form>
         <h2>Если вы заполнили все поля нажмите кнопку "ПРОВЕРИТЬ"</h2>
-        <div>
-            <button id="Hi_btn">ПРОВЕРИТЬ</button>
+        <div class="block">
+            <button id="Hi_btn">Готово</button>
             <button id="clear_btn" type="button">ОЧИСТИТЬ ВСЁ</button>
         </div>
     </main>

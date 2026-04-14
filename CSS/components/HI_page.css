@@ -1,3 +1,8 @@
+body {
+    background-color: var(--main-bg);
+    opacity: 1;
+}
+
 header {
     padding-top: 30px;
     display: flex;
@@ -5,9 +10,7 @@ header {
 }
 
 .Hi_massage {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+    justify-items: center;
 }
 
 main h3 {
@@ -28,33 +31,49 @@ main button:hover {
 }
 
 /* Настройки разделов ФИО: */
+.block {
+    display: flex;
+    justify-content: center;
+}
+
+.block_divs {
+    width: max-content;
+}
 
 .first_name {
     grid-area: first_name;
-    border-radius: 10px;
-    max-width: 250px;
-    height: 35px;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
 }
 
 .surname {
     grid-area: name;
-    border-radius: 10px;
-    max-width: 250px;
-    height: 35px;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
 }
 
 .patronymic{
     grid-area: surname;
-    border-radius: 10px;
-    max-width: 250px;
-    height: 35px;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
 }
 
 .phone_number {
     grid-area: phone_number;
-    border-radius: 10px;
-    max-width: 250px;
-    height: 35px;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
 }
 
 .your_photo {
@@ -65,15 +84,17 @@ main button:hover {
     grid-area: photo;
     max-width: 300px;
     height: 150px;
-    border: 1px  solid black;
+    border: var(--input-border);
 }
 
+ /* GRID сетка */
 .Full_name {
     gap: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     max-width: 1200px;
+    justify-items: center;
     align-items: center;
     
     /* разметка сетки */
@@ -82,4 +103,113 @@ main button:hover {
     "name photo"
     "surname photo"
     "phone_number your_photo";
+}
+
+/* ==================================================================================================== */
+
+/* Опыт работы */
+.company {
+    grid-area: your_company;
+}
+
+.your_company {
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
+}
+
+.position{
+    grid-area: your_psition;
+}
+
+.your_position{
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
+}
+
+.workTime {
+    grid-area: your_workTime;
+}
+
+.your_workTime {
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
+}
+
+.duties {
+    grid-area: your_duties;
+}
+
+.your_duties {
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    width: 300px;
+    height: 200px;
+    resize: none;
+}
+
+.workExp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    grid-template-areas: 
+    "your_company your_duties"
+    "your_psition your_duties"
+    "your_workTime your_duties";
+}
+
+/* ==================================================================================================== */
+
+.education {
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
+}
+
+.specialisation {
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
+}
+
+.education_time {
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    max-width: var(--input-max-width);
+    height: var(--input-height);
+}
+
+/* ==================================================================================================== */
+
+.skills {
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    width: 300px;
+    height: 200px;
+    resize: none;
+}
+
+/* ==================================================================================================== */
+.info {
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    width: 300px;
+    height: 200px;
+    resize: none;
 }

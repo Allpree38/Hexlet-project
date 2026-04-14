@@ -1,0 +1,14 @@
+:root {
+    /* Основные настройки полей ввода */
+    --input-border-radius: 10px;
+    --input-height: 35px;
+    --input-border: 1px solid #ccc;
+    --input-bg: rgb(255, 255, 255);
+    --input-text-color: #333;
+    --input-max-width: 100%;
+    
+    /* Настройки для textarea */
+    --textarea-max-width: 100%;
+
+    --main-bg:rgb(247, 243, 228);
+}

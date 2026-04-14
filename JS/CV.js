@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// (Де)Генерация резюме
+// Генерация резюме
 function generateCV(data) {
     const fullName = `${data.firstName || ''} ${data.lastName || ''} ${data.patronymic || ''}`.trim();
     const phoneFormatted = data.phone ? `+7${data.phone}` : 'не указан';
@@ -44,21 +44,21 @@ function generateCV(data) {
             </div>
             <div class="CVJobInfo">
                 <h3>Опыт работы</h3>
-                <p>${escapeHtml(data.company || '—')} — ${escapeHtml(data.position || '—')}</p>
-                <p>Период: ${escapeHtml(data.workPeriod || '—')}</p>
-                <p>Обязанности: ${escapeHtml(data.duties || '—')}</p>
+                <p>${escapeHtml(data.company || 'Компания не указана')} - ${escapeHtml(data.position || 'Должность не указана')}</p>
+                <p>Период: ${escapeHtml(data.workPeriod || 'Не указан')}</p>
+                <p>Обязанности: ${escapeHtml(data.duties || 'Не указаны')}</p>
             </div>
             <div class="CVJobInfo">
                 <h3>Образование</h3>
-                <p>${escapeHtml(data.education || '—')}</p>
+                <p>${escapeHtml(data.education || 'Не указано')}</p>
             </div>
             <div class="CVJobInfo">
                 <h3>Навыки</h3>
-                <p>${escapeHtml(data.skills || '—')}</p>
+                <p>${escapeHtml(data.skills || 'Не указаны')}</p>
             </div>
             <div class="CVJobInfo">
                 <h3>Дополнительная информация</h3>
-                <p>${escapeHtml(data.infoAbout || '—')}</p>
+                <p>${escapeHtml(data.infoAbout || 'Не указано')}</p>
             </div>
     `;
 

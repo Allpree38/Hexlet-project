@@ -22,7 +22,8 @@ document.getElementById('downloadPDF').addEventListener('click', function() {
         let position = 0;
         
         pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        // Если контент длиннее одной страницы, добавим автоматически
+        
+        // Если наполнения много то создаёт ещё 1 страницу
         let heightLeft = imgHeight - pageHeight;
         while (heightLeft > 0) {
             position = heightLeft - imgHeight;
@@ -31,7 +32,8 @@ document.getElementById('downloadPDF').addEventListener('click', function() {
             heightLeft -= pageHeight;
         }
         
-        pdf.save('resume.pdf');
+        // Сохранение документа
+        pdf.save('Your_CV.pdf');
         element.style.opacity = '1';
     }).catch(error => {
         console.error('Ошибка:', error);
