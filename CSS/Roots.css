@@ -11,4 +11,8 @@
     --textarea-max-width: 100%;
 
     --main-bg:rgb(247, 243, 228);
+
+    /* Кнопки */
+    --button-bg: rgb(243, 225, 147);
+    --hoover-button-bg: rgb(202, 188, 124);
 }

@@ -42,26 +42,28 @@ function generateCV(data) {
                     <p>Телефон: ${escapeHtml(phoneFormatted)}</p>
                 </div>
             </div>
-            <div class="CVJobInfo">
-                <h3>Опыт работы</h3>
-                <p>${escapeHtml(data.company || 'Компания не указана')} - ${escapeHtml(data.position || 'Должность не указана')}</p>
-                <p>Период: ${escapeHtml(data.workPeriod || 'Не указан')}</p>
-                <p>Обязанности: ${escapeHtml(data.duties || 'Не указаны')}</p>
-            </div>
-            <div class="CVJobInfo">
-                <h3>Образование</h3>
-                <p>${escapeHtml(data.education || 'Не указано')}</p>
-                <p>${escapeHtml(data.your_specialisation || 'Не указана')}</p>
-                <p>${escapeHtml(data.education_time || 'Не указано')}</p>
-            </div>
-            <div class="CVJobInfo">
-                <h3>Навыки</h3>
-                <p>${escapeHtml(data.skills || 'Не указаны')}</p>
-            </div>
-            <div class="CVJobInfo">
-                <h3>Дополнительная информация</h3>
-                <p>${escapeHtml(data.infoAbout || 'Не указано')}</p>
-            </div>
+                <div class="blocks">
+                    <div class="CVJobInfo">
+                        <h3>Опыт работы</h3>
+                        <p>${escapeHtml(data.company || 'Компания не указана')} - ${escapeHtml(data.position || 'Должность не указана')}</p>
+                        <p>Период: ${escapeHtml(data.workPeriod || 'Не указан')}</p>
+                        <p>Обязанности: ${escapeHtml(data.duties || 'Не указаны')}</p>
+                    </div>
+                    <div class="CVJobInfo">
+                        <h3>Образование</h3>
+                        <p><span>Учебное заведение:</span> ${escapeHtml(data.education || 'Не указано')}</p>
+                        <p><span>Обучался на специализацию:</span> ${escapeHtml(data.your_specialisation || 'Не указана')}</p>
+                        <p><span>Период обучения:</span> ${escapeHtml(data.education_time || 'Не указано')}</p>
+                    </div>
+                    <div class="CVJobInfo">
+                        <h3>Навыки</h3>
+                        <p>${escapeHtml(data.skills || 'Не указаны')}</p>
+                    </div>
+                    <div class="CVJobInfo">
+                        <h3>Дополнительная информация</h3>
+                        <p>${escapeHtml(data.infoAbout || 'Не указано')}</p>
+                    </div>
+                </div>  
     `;
 
 // Рекомендашки
@@ -79,33 +81,33 @@ function recommendation(specialisation) {
                 <p>Укажите стек технологий (JavaScript, Python, etc.), ссылку на GitHub/портфолио, сертификаты.</p>
             </div>`,
         'marketing': `
-            <div class="CVJobInfo recommendation">
+            <div class="CVJobInfo_recommendation">
                 <h3>Рекомендация для маркетолога</h3>
                 <p>Добавьте примеры успешных кампаний, владение SEO/PPC, аналитику.</p>
             </div>`,
         'accountant': `
-            <div class="CVJobInfo recommendation">
+            <div class="CVJobInfo_recommendation">
                 <h3>Рекомендация для бухгалтера</h3>
                 <p>Укажите знание 1С, налогового законодательства, опыт с отчётностью.</p>
             </div>`,
         'engineer': `
-            <div class="CVJobInfo recommendation">
+            <div class="CVJobInfo_recommendation">
                 <h3>Рекомендация для инженера</h3>
                 <p>Перечислите проекты, знание ГОСТов, CAD-программы.</p>
             </div>`,
         'manager': `
-            <div class="CVJobInfo recommendation">
+            <div class="CVJobInfo_recommendation">
                 <h3>Рекомендация для менеджера</h3>
                 <p>Опишите управленческий опыт, KPI, навыки командной работы.</p>
             </div>`
     };
     return blocks[specialisation] || `
-        <div class="CVJobInfo recommendation">
+        <div class="CVJobInfo_recommendation">
             <p>Рекомендации по вашей профессии появятся позже.</p>
         </div>`;
 }
 
-// Да, да, я спёр XSS защиту с рандомного видоса
+// XSS защита 
 function escapeHtml(str) {
     if (!str) return '';
     return str.replace(/[&<>]/g, function(m) {

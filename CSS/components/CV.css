@@ -1,9 +1,36 @@
+body {
+    background-color: var(--main-bg);
+    gap: 25px;
+}
+
 .CV-header {
-    padding-bottom: 15px;
-    margin: 10px;
+    margin-bottom: 10px;
     gap: 15px;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.block {
+    width: 500px;
+    border-bottom: 1px solid black;
+}
+
+span {
+    font-weight: bold;
 }
 
 .CV-photo {
@@ -11,11 +38,28 @@
     max-width: 300px;
     height: 150px;
     border: 1px  solid black;
+    background-color: white;
 }
 
 .CVJobInfo {
-    margin: 10px;
-    padding-top: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 500px;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+}
+
+.CVJobInfo_recommendation {
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: var(--input-border-radius);
+    border: var(--input-border);
+    background-color: var(--input-bg);
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 button {
@@ -23,10 +67,10 @@ button {
     height: 50px;
     border-radius: 10px;
     border: none;
-    background-color: rgb(142, 241, 237);
+    background-color: var(--button-bg);
     cursor: pointer;
 }
 
 button:hover {
-    background-color: rgb(116, 201, 198);
+    background-color: var(--hoover-button-bg);
 }
